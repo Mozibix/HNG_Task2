@@ -15,6 +15,12 @@
 .movie {
   &_sec {
     padding: 1rem;
+
+    &_inner {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+    }
   }
 
   &_card {
@@ -32,6 +38,11 @@
       border: 1px solid $secondary;
     }
 
+    &_container {
+      width: fit-content;
+      margin-bottom: 20px;
+      box-sizing: border-box;
+    }
     &_bottom {
       padding: 0.5rem;
       display: grid;
