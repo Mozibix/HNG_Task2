@@ -75,7 +75,3 @@ export const MovieCard = ({ movie }) => {
 };
 
 export default MovieList;
-{
-  /* <p>backdrop:</p>
-<img src={backDropUrl} alt={`${movie.title} Poster`} /> */
-}
