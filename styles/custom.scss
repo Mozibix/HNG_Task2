@@ -157,7 +157,7 @@ ul {
   &_inner {
     @include flex_center();
     justify-content: space-around;
-    padding-top: 5rem;
+    padding-block: 5rem;
     flex-wrap: wrap;
   }
 
@@ -166,7 +166,6 @@ ul {
       display: grid;
       gap: 1rem;
       h2 {
-        color: #fff;
         font-size: 3rem;
         font-weight: 700;
         line-height: 3.5rem;
@@ -215,6 +214,39 @@ ul {
 
   &_right {
     width: 40%;
+  }
+}
+
+/* -----------FEATURED_SEC STYLES----------- */
+.featured {
+  &_sec {
+    &_inner {
+      width: 100%;
+      max-width: 80%;
+      margin: 0 auto;
+      padding: 4rem 1rem;
+    }
+  }
+
+  &_header {
+    @include flex_center();
+    justify-content: space-between;
+    margin-bottom: 2.5rem;
+
+    h2 {
+      color: $black;
+      font-size: 2.25rem;
+      font-weight: 700;
+      line-height: normal;
+    }
+
+    p {
+      color: $secondary;
+      font-size: 1.125rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 1.5rem;
+    }
   }
 }
 
