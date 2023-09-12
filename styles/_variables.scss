@@ -9,3 +9,11 @@
 .container_main {
   padding: 1rem;
 }
+
+/* ----------------MOVIE SECTION---------------- */
+
+.movie {
+  &_sec {
+    border: 1px solid red;
+  }
+}
