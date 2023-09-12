@@ -20,12 +20,49 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: space-evenly;
+      gap: 3rem;
+    }
+  }
+
+  &_search {
+    @include flex_center();
+    justify-content: flex-end;
+
+    &_inner {
+      @include flex_center();
+      border: 2px solid $light_border;
+      background: $white;
+      width: 100%;
+      @media screen and (min-width: 400px) {
+        width: fit-content;
+      }
+
+      span {
+        @include flex_center();
+        background: $light_border;
+        width: 3.8rem;
+        font-size: 1.8rem;
+        aspect-ratio: 1/1;
+        padding-bottom: 0.3rem;
+      }
+
+      input {
+        width: 100%;
+        padding: 0.7rem;
+        border-radius: 8px;
+        outline: none;
+        border: none;
+        background: transparent;
+        &::placeholder {
+          font-size: 0.9rem;
+        }
+      }
     }
   }
 
   &_card {
     width: 15rem;
-    height: 28rem;
+    height: 30rem;
     margin: 1rem 0;
     cursor: pointer;
     scale: 0.9;
