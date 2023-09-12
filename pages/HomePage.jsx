@@ -1,6 +1,7 @@
 import Footer from "@/(components)/Footer";
 import Header from "@/(components)/Header";
 import MovieList from "@/(components)/MovieList";
+import { BsChevronRight } from "react-icons/bs";
 import React from "react";
 
 const HomePage = () => {
@@ -59,7 +60,12 @@ const HomePage = () => {
             <div className="featured_header">
               <h2>Featured Movie</h2>
 
-              <p>See more</p>
+              <p>
+                See more{" "}
+                <span>
+                  <BsChevronRight />
+                </span>{" "}
+              </p>
             </div>
 
             <div className="movie_sec">
