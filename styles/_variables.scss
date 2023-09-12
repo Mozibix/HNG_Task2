@@ -14,6 +14,54 @@
 
 .movie {
   &_sec {
-    border: 1px solid red;
+    padding: 1rem;
+  }
+
+  &_card {
+    width: 15rem;
+    height: 28rem;
+    margin: 1rem 0;
+    cursor: pointer;
+    scale: 0.9;
+    transition: all 0.4s ease-in-out;
+    border-radius: 0.6rem;
+    overflow: hidden;
+
+    &:hover {
+      scale: 1;
+      border: 1px solid $secondary;
+    }
+
+    &_bottom {
+      padding: 0.5rem;
+      display: grid;
+      gap: 0.5rem;
+    }
+
+    &_inner {
+      display: grid;
+      gap: 0.7rem;
+      img {
+        width: 100%;
+      }
+
+      h3 {
+        font-size: 1.125rem;
+        font-weight: 700;
+        line-height: normal;
+      }
+
+      p {
+        color: $light_text;
+        font-size: 0.9rem;
+        font-weight: 600;
+        line-height: normal;
+
+        span {
+          font-weight: 900;
+          font-size: 1rem;
+        }
+      }
+    }
   }
 }
