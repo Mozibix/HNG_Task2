@@ -30,7 +30,9 @@ function MovieList() {
     <>
       <div className="movie_sec_inner">
         {movies.map((movie) => (
-          <MovieCard key={movie.id} movie={movie} />
+          <div className="movie_card_container" key={movie.id}>
+            <MovieCard key={movie.id} movie={movie} />
+          </div>
         ))}
       </div>
     </>
@@ -38,7 +40,6 @@ function MovieList() {
 }
 
 export const MovieCard = ({ movie }) => {
-  console.log("movie", movie);
   const posterUrl = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
   const router = useRouter();
   const handleCardClick = () => {
@@ -46,28 +47,30 @@ export const MovieCard = ({ movie }) => {
   };
 
   return (
-    <>
-      <div
-        className="movie_card"
-        data-testid="movie-card"
-        onClick={handleCardClick}
-      >
-        <div className="movie_card_inner">
+    <div
+      data-testid="movie-card"
+      className="movie_card"
+      onClick={handleCardClick}
+    >
+      <div className="movie_card_inner">
+        <div className="movie_card_top">
           <img
             data-testid="movie-poster"
             src={posterUrl}
             alt={`${movie.title} Poster`}
           />
-          <h2 data-testid="movie-title" className="movie_title">
+        </div>
+        <div className="movie_card_bottom">
+          <h3 data-testid="movie-title" className="movie_title">
             {movie.title}
-          </h2>
+          </h3>
           <p>
-            Release Date:
+            Release Date:{" "}
             <span data-testid="movie-release-date">{movie.release_date}</span>
           </p>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
