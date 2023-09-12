@@ -26,7 +26,7 @@ ul {
   display: none;
 }
 
-/* NAV/HEADER STYLES */
+/* -----------NAV/HEADER STYLES----------- */
 .nav {
   &_inner {
     @include flex_center();
@@ -137,5 +137,54 @@ ul {
         scale: 1;
       }
     }
+  }
+}
+
+/* -----------FOOTER STYLES----------- */
+
+.footer {
+  @include flex_center();
+
+  &_inner {
+    display: grid;
+    gap: 2.2rem;
+    padding: 0.5rem;
+  }
+
+  & &_socials {
+    @include flex_center();
+    flex-wrap: wrap;
+    gap: 3rem;
+
+    img {
+      scale: 0.8;
+      transition: all 0.4s ease-in-out;
+
+      &:hover {
+        scale: 1.2;
+      }
+    }
+  }
+
+  &_links {
+    ul {
+      @include flex_center();
+      flex-wrap: wrap;
+      gap: 1.1rem;
+      color: $dark_text;
+      font-size: 1.1rem;
+      font-weight: 700;
+      line-height: normal;
+      @media screen and (min-width: 576px) {
+        gap: 4rem;
+      }
+    }
+  }
+
+  &_bottom {
+    text-align: center;
+    color: $footer_light_text;
+    font-size: 1.1rem;
+    font-weight: 700;
   }
 }
