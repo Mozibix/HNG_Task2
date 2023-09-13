@@ -232,6 +232,11 @@ ul {
 
 /* -----------SIDEBAR STYLES----------- */
 .sidebar {
+  display: none;
+  @media screen and (min-width: 576px) {
+    display: block;
+  }
+
   &_inner {
     border-top-right-radius: 1rem;
     overflow: hidden;
@@ -247,6 +252,14 @@ ul {
     font-family: "Poppins", sans-serif;
     font-style: normal;
 
+    span {
+      display: none;
+
+      @media screen and (min-width: 992px) {
+        display: block;
+      }
+    }
+
     ul {
       display: grid;
       width: 100%;
@@ -255,7 +268,7 @@ ul {
       li {
         @include flex_center();
         gap: 0.3rem;
-        padding-inline: 2.5rem 0;
+        padding-inline: 1.7rem 0;
         width: 100%;
         justify-content: flex-start;
         color: $sidebar_menu;
@@ -268,6 +281,11 @@ ul {
         border-bottom-right-radius: 8px;
         transition: all 0.4s ease-in-out;
         scale: 0.9;
+        cursor: pointer;
+
+        @media screen and (min-width: 992px) {
+          padding-inline: 2.5rem 0;
+        }
 
         &:hover,
         &.active {
@@ -311,6 +329,11 @@ ul {
       border-radius: 1.25rem;
       border: 1px solid rgba(190, 18, 60, 0.7);
       background: rgba(248, 231, 235, 0.4);
+      display: none;
+
+      @media screen and (min-width: 992px) {
+        display: block;
+      }
 
       p {
         &:nth-child(1) {
@@ -482,24 +505,51 @@ ul {
   }
 
   &_inner {
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    gap: 2.5rem;
+    @media screen and (min-width: 576px) {
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+    @media screen and (min-width: 992px) {
+      gap: 2.5rem;
+    }
+  }
+
+  &_header {
+    display: block;
+    @media screen and (min-width: 576px) {
+      display: none;
+    }
   }
 
   &_details {
     width: 100%;
     height: 100%;
-    max-width: 75%;
-    padding: 3rem 1rem;
+    max-height: 100vh;
+    padding: 0.5rem;
+    overflow: scroll;
+    @media screen and (min-width: 576px) {
+    }
+    @media screen and (min-width: 992px) {
+      max-width: 75%;
+      padding: 3rem 1rem;
+    }
 
     &_image {
       width: 100%;
-      height: 35rem;
+      height: 20rem;
       flex-shrink: 0;
       border-radius: 1.25rem;
       overflow: hidden;
+      position: relative;
+
+      @media screen and (min-width: 576px) {
+        height: 27rem;
+      }
+      @media screen and (min-width: 768px) {
+        height: 35rem;
+      }
 
       img {
         width: 100%;
@@ -510,16 +560,33 @@ ul {
     &_text_sec {
       display: grid;
       gap: 2rem;
-      padding: 1.5rem;
+      padding: 1rem;
+
+      @media screen and (min-width: 992px) {
+        padding: 1.5rem;
+      }
     }
 
     &_nav {
-      @include flex_center();
-      justify-content: flex-start;
-      gap: 1.5rem;
+      display: grid;
+      gap: 0.5rem;
       color: $sidebar_menu_list;
-      font-size: 1.5rem;
+      font-size: 1rem;
       line-height: normal;
+
+      @media screen and (min-width: 576px) {
+        font-size: 1.3rem;
+      }
+      @media screen and (min-width: 768px) {
+        @include flex_center();
+        justify-content: flex-start;
+        gap: 1.1rem;
+      }
+
+      @media screen and (min-width: 1200px) {
+        font-size: 1.5rem;
+        gap: 1.5rem;
+      }
     }
 
     &_overview {
@@ -534,14 +601,17 @@ ul {
 
         p {
           width: 100%;
-          height: 100%;
-          max-width: 60%;
+          height: 90%;
           color: $overview_text;
           font-size: 1.25rem;
           font-style: normal;
           font-weight: 400;
           line-height: 1.8rem;
           padding: 0 0.8rem;
+
+          @media screen and (min-width: 1500px) {
+            max-width: 75%;
+          }
         }
       }
     }
