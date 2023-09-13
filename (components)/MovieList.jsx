@@ -100,7 +100,10 @@ export const MovieCard = ({ movie }) => {
       onClick={handleCardClick}
     >
       <div className="movie_card_inner">
-        <div className="movie_card_top">
+        <div className="movie_card_top relative">
+          <div className="heart_icon">
+            <img src="/svgs/heart_icon.svg" alt="heart_icon" />
+          </div>
           <img
             data-testid="movie-poster"
             src={posterUrl}
