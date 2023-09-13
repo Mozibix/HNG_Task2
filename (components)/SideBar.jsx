@@ -1,7 +1,9 @@
 import Link from "next/link";
+import { useRouter } from "next/router";
 import React from "react";
 
 const SideBar = () => {
+  const router = useRouter();
   return (
     <>
       <div className="sidebar">
@@ -19,7 +21,7 @@ const SideBar = () => {
                 <img src="/svgs/home_icon.svg" alt="sidebar_icon" />
                 <span>Home</span>
               </li>
-              <li className="active">
+              <li className="active" onClick={() => router.reload()}>
                 <img src="/svgs/movie_projector_icon.svg" alt="sidebar_icon" />
                 <span>Movies</span>
               </li>
