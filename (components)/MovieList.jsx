@@ -3,10 +3,12 @@
 import { useRouter } from "next/router";
 import React, { useState, useEffect } from "react";
 import { AiOutlineSearch } from "react-icons/ai";
+import { BiLoaderCircle } from "react-icons/bi";
 
 const MovieList = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [movies, setMovies] = useState([]);
+  const [loading, setLoading] = useState(false);
   const apiKey = "f2d990ed85300af3d5a6c51e3f08ecf4";
 
   useEffect(() => {
@@ -15,9 +17,11 @@ const MovieList = () => {
         const response = await fetch(
           `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}`
         );
+        setLoading(true);
         if (response.ok) {
           const data = await response.json();
           setMovies(data.results);
+          setLoading(false);
         } else {
           throw new Error("Failed to fetch top movies");
         }
@@ -30,7 +34,7 @@ const MovieList = () => {
   }, []);
 
   const handleSearchInputChange = (e) => {
-    setSearchQuery(e.target.value); // Update the searchQuery state
+    setSearchQuery(e.target.value);
   };
 
   const filteredMovies = movies.filter((movie) =>
@@ -53,11 +57,24 @@ const MovieList = () => {
         </div>
       </div>
       <div className="movie_sec_inner">
-        {filteredMovies.map((movie) => (
-          <div className="movie_card_container" key={movie.id}>
-            <MovieCard key={movie.id} movie={movie} />
-          </div>
-        ))}
+        {loading ? (
+          <>
+            <p className="movie_sec_loading_sec">
+              <span>
+                <BiLoaderCircle className="mr-2 animate-spin" size={22} />
+              </span>
+              Loading...
+            </p>
+          </>
+        ) : (
+          <>
+            {filteredMovies.map((movie) => (
+              <div className="movie_card_container" key={movie.id}>
+                <MovieCard key={movie.id} movie={movie} />
+              </div>
+            ))}
+          </>
+        )}
       </div>
     </>
   );
