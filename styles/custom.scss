@@ -298,9 +298,13 @@ ul {
   &_sec {
     &_inner {
       width: 100%;
-      max-width: 80%;
       margin: 0 auto;
-      padding: 4rem 1rem;
+      padding: 2rem 1rem;
+
+      @media screen and (min-width: 576px) {
+        max-width: 80%;
+        padding: 4rem 1rem;
+      }
     }
   }
 
@@ -311,14 +315,18 @@ ul {
 
     h2 {
       color: $black;
-      font-size: 2.25rem;
+      font-size: 1.1rem;
       font-weight: 700;
       line-height: normal;
+
+      @media screen and (min-width: 400px) {
+        font-size: 2.25rem;
+      }
     }
 
     p {
       color: $secondary;
-      font-size: 1.125rem;
+      font-size: 0.8rem;
       font-style: normal;
       font-weight: 400;
       line-height: 1.5rem;
@@ -327,6 +335,10 @@ ul {
       cursor: pointer;
       transition: all 0.4s ease-in-out;
       scale: 0.9;
+
+      @media screen and (min-width: 576px) {
+        font-size: 1.125rem;
+      }
 
       &:hover {
         scale: 1.1;
