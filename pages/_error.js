@@ -2,9 +2,9 @@ import React from "react";
 
 function ErrorPage() {
   return (
-    <div>
+    <div className="text-center">
       <h1>Error Page</h1>
-      <p>Something went wrong.</p>
+      <p>Something went wrong kindly reload the page.</p>
     </div>
   );
 }

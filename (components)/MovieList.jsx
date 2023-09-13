@@ -46,9 +46,14 @@ const MovieList = () => {
     <>
       <div className="movie_search">
         <div className="movie_search_inner">
-          <span>
-            <AiOutlineSearch />
-          </span>
+          {loading ? (
+            <BiLoaderCircle className="mr-2 animate-spin" size={22} />
+          ) : (
+            <span>
+              <AiOutlineSearch />
+            </span>
+          )}
+
           <input
             type="text"
             placeholder="What do you want to watch?"
