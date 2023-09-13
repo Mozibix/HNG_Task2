@@ -16,6 +16,11 @@
   &_sec {
     padding: 1rem;
 
+    &_loading_sec {
+      @include flex_center();
+      gap: 0.5rem;
+    }
+
     &_inner {
       display: flex;
       flex-wrap: wrap;
