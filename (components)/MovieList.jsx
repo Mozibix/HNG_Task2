@@ -15,12 +15,13 @@ const MovieList = () => {
     async function fetchTopMovies() {
       try {
         const response = await fetch(
-          `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}`
+          `https://api.themoviedb.org/3/movie/top_rated?api_key=${apiKey}`
         );
         setLoading(true);
         if (response.ok) {
           const data = await response.json();
-          setMovies(data.results);
+          const top10Movies = data.results.slice(0, 10);
+          setMovies(top10Movies);
           setLoading(false);
         } else {
           throw new Error("Failed to fetch top movies");
