@@ -3,6 +3,7 @@ import Header from "@/(components)/Header";
 import MovieList from "@/(components)/MovieList";
 import { BsChevronRight } from "react-icons/bs";
 import React from "react";
+import Link from "next/link";
 
 const HomePage = () => {
   return (
@@ -40,12 +41,17 @@ const HomePage = () => {
                     everywhere.
                   </p>
 
-                  <button>
-                    <span>
-                      <img src="/svgs/play_icon.svg" alt="play_icon" />
-                    </span>
-                    Watch trailer
-                  </button>
+                  <Link
+                    target="_blank"
+                    href="https://www.lionsgate.com/movies/john-wick-chapter-3-parabellum"
+                  >
+                    <button>
+                      <span>
+                        <img src="/svgs/play_icon.svg" alt="play_icon" />
+                      </span>
+                      Watch trailer
+                    </button>
+                  </Link>
                 </div>
               </div>
 
