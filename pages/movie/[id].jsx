@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
+import SideBar from "@/(components)/SideBar";
 
 function MovieDetailsPage() {
   const router = useRouter();
@@ -32,19 +33,31 @@ function MovieDetailsPage() {
   }, [id]);
 
   return (
-    <div>
-      {error ? (
-        <p>Error: {error}</p>
-      ) : movieDetails ? (
-        <div>
-          <h1>{movieDetails.title}</h1>
-          <p>Release Date: {movieDetails.release_date}</p>
-          <p>Runtime: {movieDetails.runtime} minutes</p>
-          <p>Overview: {movieDetails.overview}</p>
+    <div className="movie_id_sec">
+      <div className="movie_id_inner">
+        <div className="movie_id_sidebar">
+          <SideBar />
         </div>
-      ) : (
-        <p>Loading...</p>
-      )}
+
+        <div className="movie_id_details">
+          {error ? (
+            <p>Error: {error}</p>
+          ) : movieDetails ? (
+            <>
+              <div>
+                <h1>{movieDetails.title}</h1>
+                <p>Release Date: {movieDetails.release_date}</p>
+                <p>Runtime: {movieDetails.runtime} minutes</p>
+                <p>Overview: {movieDetails.overview}</p>
+              </div>
+            </>
+          ) : (
+            <>
+              <p>Loading...</p>
+            </>
+          )}
+        </div>
+      </div>
     </div>
   );
 }
