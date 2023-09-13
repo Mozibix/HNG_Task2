@@ -118,3 +118,12 @@
     }
   }
 }
+
+// DIAMOND_DOT
+
+.diamond_dot {
+  width: 0.46rem;
+  aspect-ratio: 1/1;
+  background: $black;
+  rotate: 45deg;
+}
