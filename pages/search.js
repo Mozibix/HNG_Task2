@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { MovieCard } from "./movieList";
+import { MovieCard } from "@/(components)/MovieList";
 
 function SearchResults() {
   const [searchResults, setSearchResults] = useState([]);
@@ -12,7 +12,7 @@ function SearchResults() {
 
   const handleSearch = async () => {
     if (query.trim() === "") {
-      return; // Do not perform empty searches
+      return;
     }
 
     setLoading(true);
@@ -61,7 +61,7 @@ function SearchResults() {
         <div className="movie-grid">
           {searchResults.map((movie) => (
             <a key={movie.id} href={`/movies/${movie.id}`}>
-              <MovieCard movie={movie} />
+              <MovieCard key={movie.id} movie={movie} />
             </a>
           ))}
         </div>
